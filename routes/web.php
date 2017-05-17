@@ -14,3 +14,13 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('credits', 'CreditController');
+Route::get('contracts', 'ContractController@index');
+//Route::post('/credits', 'CreditController@create')->name('credits.create');
+
+//Route::get('credits', 'CreditsController@index');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

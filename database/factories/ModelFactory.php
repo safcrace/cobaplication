@@ -22,3 +22,19 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+$factory->define(App\Individual::class, function (Faker\Generator $faker) {
+
+    return [
+        'nombres' => $faker->firstNameMale,
+        'apellidos' => $faker->lastName,
+        'identificacion' => $faker->numerify('####-######-##'),
+        'fecha_nacimiento' => $faker->date($format = 'Y-m-d', $max = 'now'),
+        'domicilio'=> $faker->address,
+        'telefonos' => $faker->numerify('####-#####, ####-#####'),
+        'foto' => $faker->imageUrl($width = 640, $height = 480),
+        'foto_dpi' => $faker->imageUrl($width = 640, $height = 480),
+        'categoria' => $faker->randomElement($array = array ('a','b','c')),
+        //'referencia' => $faker->randomElement($array = array ('Deudor','Referencia','Conyuge')),
+    ];
+});
