@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Transformers\CreditTransformer;
 use App\Credit;
 
-class CreditController extends Controller
+class CreditApiController extends Controller
 {
   public function index()
   {

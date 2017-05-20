@@ -17,6 +17,8 @@ Route::get('/', function () {
 
 Route::resource('credits', 'CreditController');
 Route::get('contracts', 'ContractController@index');
+Route::get('contracts/review/{id}', 'ContractController@review')->name('review');
+Route::get('contracts/approbe/{id}', 'ContractController@approbe')->name('approbe');
 //Route::post('/credits', 'CreditController@create')->name('credits.create');
 
 //Route::get('credits', 'CreditsController@index');

@@ -25,7 +25,7 @@
 
                  <div class="panel panel-default">
                    <div class="panel-heading">
-                      <h4 class="box-title">Listado General de Solicitudes Pendientes de Aprobar</h3>
+                      <h4 class="box-title">Listado General de Solicitudes Pendientes de Aprobación Final</h3>
 
                     </div>
                    <div class="panel-body">
@@ -34,8 +34,8 @@
                          <th>No. de Credito</th>
                          <th>Cliente</th>
                          <th>Colocador</th>
-                         <th>Monto Solicitado</th>
-                         <th>Tipo de Credito</th>
+                         <th>Revisor</th>
+                         <th>Monto</th>
                          <th>Aprobar</th>
                        </thead>
                        <tbody>
@@ -45,8 +45,9 @@
                                <td >{{$contract->id}}</td>
                                <td>{{$contract->cliente}}</td>
                                <td>{{$contract->colocador}}</td>
+                               <td>Sender Flores</td>
                                <td>{{$contract->monto_solicitado}}</td>
-                               <td>{{$contract->tipo_cobro}}</td>
+
                                <td>
                                    <a href="{{ route('review', ['id' => $contract->id]) }}"><button type="button" id='nuevo'  name='nuevo' class="btn btn-primary navbar-btn" style="margin-bottom: 1px; margin-top: -5px;margin-right: 8px;padding: 3px 20px;"><i class="menu-icon fa fa-check bg-light-blue"></i></span></button></a>
                                </td>
@@ -58,7 +59,7 @@
 
                       </table>
 <div class="text-center">
- 
+
 </div>
                         <div id="list-product"></div>
 

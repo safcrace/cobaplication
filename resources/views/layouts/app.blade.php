@@ -21,8 +21,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-  <!-- DataTables -->
-  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css">
+  <!-- DataTables
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css">-->
 
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ asset('dist/css/AdminLTE.min.css') }}">
@@ -158,7 +158,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="http://quetzalitoya.dev/credits"><i class="fa fa-caret-right"></i> Bolsa de Valores</a></li>            
+            <li><a href="http://quetzalitoya.dev/credits"><i class="fa fa-caret-right"></i> Bolsa de Valores</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -170,7 +170,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="../layout/top-nav.html"><i class="fa fa-circle-o"></i> Listado General</a></li>
+            <li><a href="http://quetzalitoya.dev/contracts"><i class="fa fa-circle-o"></i> Listado General</a></li>
             <li><a href="../layout/boxed.html"><i class="fa fa-circle-o"></i> Listado Deudores</a></li>
             <li><a href="../layout/fixed.html"><i class="fa fa-circle-o"></i> Listado Viudas</a></li>
             <li><a href="../layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Listado Referencias</a></li>
@@ -185,7 +185,7 @@
                 </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="../charts/chartjs.html"><i class="fa fa-circle-o"></i> Pendientes</a></li>
+            <li><a href="http://quetzalitoya.dev/contracts"><i class="fa fa-circle-o"></i> Pendientes</a></li>
             <li><a href="../charts/morris.html"><i class="fa fa-circle-o"></i> Aprobados</a></li>
             <li><a href="../charts/flot.html"><i class="fa fa-circle-o"></i> Rechazados</a></li>
             <li><a href="../charts/inline.html"><i class="fa fa-circle-o"></i> Cancelados</a></li>
@@ -537,11 +537,11 @@
 <script src="{{ asset('plugins/jQuery/jquery-2.2.3.min.js') }}"></script>
 <!-- Bootstrap 3.3.6 -->
 <script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
-<!-- DataTables-->
+<!-- DataTables
 
 
 <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js" charset="utf-8"></script>
-<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js" charset="utf-8"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js" charset="utf-8"></script>-->
 <!-- SlimScroll -->
 <script src="{{ asset('plugins/slimScroll/jquery.slimscroll.min.js') }}"></script>
 <!-- FastClick -->
