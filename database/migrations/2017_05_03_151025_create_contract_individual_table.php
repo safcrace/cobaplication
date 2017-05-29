@@ -18,7 +18,7 @@ class CreateContractIndividualTable extends Migration
 
           $table->integer('contract_id')->unsigned();
           $table->integer('individual_id')->unsigned();
-          $table->char('tipo_referencia', 15);
+          $table->integer('reference_id')->unsigned()->nullable();
           $table->timestamps();
 
           $table->foreign('contract_id')
@@ -30,6 +30,9 @@ class CreateContractIndividualTable extends Migration
                 ->references('id')
                 ->on('individuals')
                 ->onDelete('cascade');
+
+          /*$table->foreign('contract_id')->references('id')->on('contracts')->onDelete('cascade');
+          $table->foreign('individual_id')->references('id')->on('individuals')->onDelete('cascade');*/
 
         });
     }

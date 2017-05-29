@@ -15,15 +15,14 @@ class ContractApiController extends Controller
       $contract->credit_id = $request->credit_id;
       $contract->status_id = $request->status_id;
       $contract->monto_solicitado = $request->monto_solicitado;
-      $contract->monto_otorgado = $request->monto_otorgado;
       $contract->tasa_interes = $request->tasa_interes;
       $contract->tasa_mora = $request->tasa_mora;
-      $contract->tipo_interes = $request->tipo_interes;
-      $contract->tipo_cobro = $request->tipo_cobro;
+      $contract->interest_id = $request->interest_id;
+      $contract->payment_id = $request->payment_id;
       $contract->cuota = $request->cuota;
-      $contract->fecha_solicitud = '2017/04/27';
+      $contract->request_date = '2017/04/27';
 
-      $contract->codigo_usuario_solicito = $request->user()->id;
+      $contract->request_user_id = $request->user()->id;
       $contract->save();
       //dd($contract);
 

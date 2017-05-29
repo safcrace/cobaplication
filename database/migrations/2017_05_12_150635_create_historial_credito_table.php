@@ -16,7 +16,7 @@ class CreateHistorialCreditoTable extends Migration
         Schema::create('historial_creditos', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('contract_id')->unsigned();
-            $table->date('fecha_pago');
+            $table->datetime('fecha_pago');
             $table->float('cargo_capital',8,2);
             $table->float('cargo_intereses', 8,2);
             $table->float('abono_capital', 8,2);

@@ -16,7 +16,7 @@
   <!-- Styles -->
 
   <!-- Bootstrap 3.3.6 -->
-  <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css') }}">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
   <!-- Ionicons -->
@@ -311,27 +311,12 @@
   </aside>
 
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <h1>
-        CONTRATOS
-        <small>Solcitudes Pendientes</small>
-      </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Tables</a></li>
-        <li class="active">Data tables</li>
-      </ol>
-    </section>
-
-    @yield('content')
-
+      @yield('content')
   </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
     <div class="pull-right hidden-xs">
-      <b>Version</b> 2.3.8
+      <b>Version</b> 0.0.1
     </div>
     <strong>Copyright &copy; 2017 <a href="http://almsaeedstudio.com">Quetzalito Ya</a>.</strong> All rights
     reserved.
@@ -534,18 +519,21 @@
 <!-- ./wrapper -->
 
 <!-- jQuery 2.2.3 -->
-<script src="{{ asset('plugins/jQuery/jquery-2.2.3.min.js') }}"></script>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
 <!-- Bootstrap 3.3.6 -->
-<script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <!-- DataTables
 
 
 <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js" charset="utf-8"></script>
 <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js" charset="utf-8"></script>-->
-<!-- SlimScroll -->
-<script src="{{ asset('plugins/slimScroll/jquery.slimscroll.min.js') }}"></script>
-<!-- FastClick -->
-<script src="{{ asset('plugins/fastclick/fastclick.js') }}"></script>
+<!-- SlimScroll
+<script src="{{ asset('plugins/slimScroll/jquery.slimscroll.min.js') }}"></script>-->
+<!-- FastClick
+<script src="{{ asset('plugins/fastclick/fastclick.js') }}"></script>-->
 <!-- AdminLTE App -->
 <script src="{{ asset('dist/js/app.min.js') }}"></script>
 <!-- AdminLTE for demo purposes -->

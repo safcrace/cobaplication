@@ -26,6 +26,8 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
 $factory->define(App\Individual::class, function (Faker\Generator $faker) {
 
     return [
+        'credit_id' => $faker->randomElement($array = array (1,2,3)),
+        'reference_id' => $faker->randomElement($array = array (1,2,3)),
         'nombres' => $faker->firstNameMale,
         'apellidos' => $faker->lastName,
         'identificacion' => $faker->numerify('####-######-##'),
@@ -34,7 +36,6 @@ $factory->define(App\Individual::class, function (Faker\Generator $faker) {
         'telefonos' => $faker->numerify('####-#####, ####-#####'),
         'foto' => $faker->imageUrl($width = 640, $height = 480),
         'foto_dpi' => $faker->imageUrl($width = 640, $height = 480),
-        'categoria' => $faker->randomElement($array = array ('a','b','c')),
-        //'referencia' => $faker->randomElement($array = array ('Deudor','Referencia','Conyuge')),
+        'category_id' => $faker->randomElement($array = array ('1','2','3')),
     ];
 });

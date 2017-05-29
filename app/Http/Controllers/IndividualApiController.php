@@ -32,31 +32,36 @@ class IndividualApiController extends Controller
     public function store(StoreIndividualRequest $request)
     {
         $individual = new Individual;
+        $individual->credit_id = $request->credit_id;
+        $individual->reference_id = $request->reference_id;
+        $individual->category_id = $request->category_id;
         $individual->nombres = $request->nombres;
         $individual->apellidos = $request->apellidos;
+        $individual->apellido_casada = $request->apellido_casada;
         $individual->identificacion = $request->identificacion;
-        $individual->fecha_nacimiento = "1990/02/15";
+        $individual->fecha_nacimiento = $request->fecha_nacimiento;
         $individual->domicilio = $request->domicilio;
         $individual->telefonos = $request->telefonos;
         $individual->foto = 'http://lorempixel.com/640/480/?29931';
         $individual->foto_dpi = 'http://lorempixel.com/640/480/?29931';
-        $individual->categoria = $request->categoria;
-        $solicitud_id = $request->solicitud_id;
-        $referencia = $request->referencia;
-        $contract = Contract::find($solicitud_id);
+        $contract_id = $request->contract_id;
+        $reference = $request->reference_id;
+
+        $contract = Contract::find($request->reference_id);
 
         //dd($informacion);
         $contract->individuals()->save($individual);
 
         DB::table('contract_individual')
-            ->where([['contract_id', $solicitud_id],['individual_id', $individual->id]])
-            ->update(['tipo_referencia' => $referencia]);
+            ->where([['contract_id', $contract_id],['individual_id', $individual->id]])
+            ->update(['reference_id' => $request->reference_id]);
 
         $work = new Work;
         $work->empresa = $request->empresa;
         $work->direccion = $request->direccion;
         $work->telefonos_empresa = $request->telefonos_empresa;
         $work->puesto = $request->puesto;
+        $work->salario_mensual = $request->salario_mensual;
         $work->tiempo_servicio = $request->tiempo_servicio;
         $work->jefe_inmediato = $request->jefe_inmediato;
 
@@ -86,7 +91,7 @@ class IndividualApiController extends Controller
 
       $contract = Contract::find($finder);
 
-      
+
 
       return fractal()
           ->item($contract)

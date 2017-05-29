@@ -8,7 +8,8 @@ class Individual extends Model
 {
 
   protected $fillable = [
-      'nombres', 'apellidos', 'apellido_casada', 'identificacion', 'fecha_nacimiento', 'domicilio', 'telefonos', 'foto', 'foto_dpi', 'categoria',
+      'nombres', 'apellidos', 'apellido_casada', 'identificacion', 'fecha_nacimiento', 'domicilio', 'telefonos', 'foto', 'foto_dpi', 'category_id',
+      'credit_id', 'reference_id'
   ];
 
   public function scopeSearch($query, $individual){

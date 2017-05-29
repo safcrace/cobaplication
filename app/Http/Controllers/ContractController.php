@@ -11,7 +11,7 @@ class ContractController extends Controller
   public function index()
   {
       //$contracts = Contract::orderBy('id')->paginate();
-      $contracts = \DB::select("select c.id, i.nombres as cliente, u.username as colocador, c.monto_solicitado, c.tipo_cobro
+      /*DB::select("select c.id, i.nombres as cliente, u.username as colocador, c.monto_solicitado, c.tipo_cobro
                                 from contracts as c inner join individuals as i on  i.contract_id = c.id
                                 inner join users as u on u.id = c.codigo_usuario_solicito");
 
@@ -22,12 +22,12 @@ class ContractController extends Controller
       //dd($credits);
       //$creditsCollection = $credits->getCollection();
 
-      return view('contracts.index', compact('contracts'));
+      return view('contracts.index');
   }
 
   public function review(Request $request)
   {
-      $contract = Contract::find($request->id);
+      /*$contract = Contract::find($request->id);
       //$individual = Individual::where('contract_id', $request->id);
       $individual = \DB::table('individuals')->where('contract_id', $request->id)->first();
       $work = \DB::table('works')->where('individual_id', $individual->id)->first();
@@ -35,8 +35,8 @@ class ContractController extends Controller
                         from individuals
                         where (contract_id = 1) and (id <> 1) ");
 
-      //dd($references);
-      return view('contracts.revision', compact('contract','individual','work','references'));
+      //dd($references);*/
+      return view('contracts.revision');
   }
 
   public function approbe(Request $request)

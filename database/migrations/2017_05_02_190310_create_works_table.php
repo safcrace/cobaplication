@@ -16,12 +16,13 @@ class CreateWorksTable extends Migration
         Schema::create('works', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('individual_id')->unsigned();//ojo
-            $table->char('empresa', 50);
-            $table->char('direccion', 50);
-            $table->char('telefonos_empresa', 24);
-            $table->char('puesto', 40);
-            $table->char('tiempo_servicio', 2);
-            $table->char('jefe_inmediato', 60);
+            $table->string('empresa');
+            $table->string('direccion');
+            $table->string('telefonos_empresa');
+            $table->string('puesto');
+            $table->float('salario_mensual',8,2);
+            $table->string('tiempo_servicio');
+            $table->string('jefe_inmediato');
             $table->timestamps();
 
             $table->foreign('individual_id')->references('id')->on('individuals')

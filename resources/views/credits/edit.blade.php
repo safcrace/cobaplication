@@ -37,15 +37,15 @@
 
                  <div class="panel panel-default">
                    <div class="panel-heading">
-                      Datos del Crédito
+                      Editar Crédito {{ $credit->descripcion }}
 
                     </div>
                    <div class="panel-body">
-										 {!! Form::open(['route' => 'credits.store', 'method' => 'POST', 'class' => 'form-horizontal']) !!}
+										 {!! Form::model($credit, ['route' => ['credits.update', $credit->id], 'method' => 'PATCH']) !!}
 
-											 @include('credits.partials.fields');
+											 @include('credits.partials.fields')
 
-                      <button type="submit" class="btn btn-default">Crear Crédito</button>
+                      <button type="submit" class="btn btn-default">Actualizar Crédito</button>
                     {!! Form::close() !!}
                    </div>
                  </div>

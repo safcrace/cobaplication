@@ -25,8 +25,8 @@
 
                  <div class="panel panel-default">
                    <div class="panel-heading">
-                      <h4 class="box-title">Listado General de Solicitudes Pendientes de Aprobar</h3>
-
+                      <h4 class="box-title">Listado General de Solicitudes Pendientes de Aprobar</h4>
+                      <a href="#"><button type="button" id='nuevo'  name='nuevo' class="btn btn-primary navbar-btn pull-right" style="margin-bottom: 1px; margin-top: -5px;margin-right: 8px;padding: 3px 20px;"><i class="menu-icon fa fa-check bg-light-blue"></i></span></button></a>
                     </div>
                    <div class="panel-body">
                      <table class="table table-bordered table-striped ">
@@ -39,26 +39,26 @@
                          <th>Aprobar</th>
                        </thead>
                        <tbody>
-                       @foreach($contracts as $contract)
+
 
                            <tr>
-                               <td >{{$contract->id}}</td>
-                               <td>{{$contract->cliente}}</td>
-                               <td>{{$contract->colocador}}</td>
-                               <td>{{$contract->monto_solicitado}}</td>
-                               <td>{{$contract->tipo_cobro}}</td>
+                               <td >1</td>
+                               <td>Juan Antonio Escobar</td>
+                               <td>Mario Estrada</td>
+                               <td>1000</td>
+                               <td>Diario</td>
                                <td>
-                                   <a href="{{ route('review', ['id' => $contract->id]) }}"><button type="button" id='nuevo'  name='nuevo' class="btn btn-primary navbar-btn" style="margin-bottom: 1px; margin-top: -5px;margin-right: 8px;padding: 3px 20px;"><i class="menu-icon fa fa-check bg-light-blue"></i></span></button></a>
+                                   <a href="#"><button type="button" id='nuevo'  name='nuevo' class="btn btn-primary navbar-btn" style="margin-bottom: 1px; margin-top: -5px;margin-right: 8px;padding: 3px 20px;"><i class="menu-icon fa fa-check bg-light-blue"></i></span></button></a>
                                </td>
                            </tr>
 
-                       @endforeach
+
                        </tbody>
 
 
                       </table>
 <div class="text-center">
- 
+
 </div>
                         <div id="list-product"></div>
 
