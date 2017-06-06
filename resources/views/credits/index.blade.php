@@ -6,21 +6,11 @@
 
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <h1>
-        BOLSA DE VALORES
-        <small>Mantenimiento</small>
-      </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Tables</a></li>
-        <li class="active">Data tables</li>
-      </ol>
-    </section>
+
   <!-- Main content -->
   <section class="content">
     <div class="row">
-      <div class="col-xs-12">
+      <div class="col-md-10 col-md-offset-1">
 
 
         <div class="box">
@@ -37,12 +27,8 @@
 
                  <div class="panel panel-default">
                    <div class="panel-heading">
-                      Lista
-                      <a href="{{ route('credits.create') }}">
-                      <p class="navbar-text navbar-right" style=" margin-top: 1px;">
-                         <button type="button" id='nuevo'  name='nuevo' class="btn btn-success navbar-btn" style="margin-bottom: 1px; margin-top: -5px;margin-right: 8px;padding: 3px 20px;"><i class="menu-icon fa fa-plus-square bg-light-blue"></i></span></button>
-                      </p>
-                      </a>
+                      <h4 class="box-title">Bolsa de Valores</h4>
+
                     </div>
 
                     {{--@if (Session::has('message'))
@@ -50,7 +36,9 @@
             				    <p class="alert alert-success">{{ Session::get('message') }}</p>
 
             				@endif --}}
-
+                    <a href="{{ route('credits.create') }}" class="pull-right">
+                      <img src="{{ asset('images/agregar2.png') }}" alt="" style="padding: 20px">
+                    </a>
                    <div class="panel-body">
                      <table class="table table-bordered table-striped ">
                        <thead>

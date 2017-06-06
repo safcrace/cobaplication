@@ -17,10 +17,10 @@ class CreditTransformer extends \League\Fractal\TransformerAbstract
             'cantidad_plazo_minimo' => $credit->cantidad_plazo_minimo,
             'minimo_time_id' => $credit->minimo_time_id,
             'cantidad_plazo_maximo' => $credit->cantidad_plazo_maximo,
-            'maximo_time_id' => $credit->maximo_time_id,            
+            'maximo_time_id' => $credit->maximo_time_id,
             'porcentaje_mora' => $credit->porcentaje_mora,
-            'tipo_interes' => $credit->tipo_interes,
-            'tipo_cobro' => $credit->tipo_cobro,
+            'interest' => $credit->interest_id,
+            'payment_id' => $credit->payment_id,
         ];
     }
 }

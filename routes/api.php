@@ -43,9 +43,9 @@ Route::group(['prefix' => 'individual'], function () {
     Route::get('/', 'IndividualApiController@search')->middleware('auth:api');
     Route::post('/', 'IndividualApiController@store')->middleware('auth:api');
     Route::get('/{individual}', 'IndividualApiController@show')->middleware('auth:api');
-
-
-
+    Route::post('/vehicles', 'VehicleApiController@store')->middleware('auth:api');
+    Route::post('/accounts', 'AccountApiController@store')->middleware('auth:api');
+    Route::post('/entries', 'EntryApiController@store')->middleware('auth:api');
 
 });
 
@@ -55,3 +55,6 @@ Route::group(['prefix' => 'references'], function () {
 
 
 });
+
+Route::post('/individual/works', 'WorkApiController@store')->middleware('auth:api');
+Route::post('/individual/deals', 'DealApiController@store')->middleware('auth:api');

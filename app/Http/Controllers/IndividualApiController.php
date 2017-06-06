@@ -18,8 +18,11 @@ class IndividualApiController extends Controller
     {
       $finder = $request->search;
 
-      $individual = Individual::Where("nombres", "like", "%$finder%")
-                    ->orWhere("apellidos", "like", "$finder%")
+      $individual = Individual::Where("nombre_uno", "like", "%$finder%")
+                    ->orWhere("nombre_dos", "like", "$finder%")
+                    ->orWhere("apellido_uno", "like", "$finder%")
+                    ->orWhere("apellido_dos", "like", "$finder%")
+                    ->orWhere("apellido_casada", "like", "$finder%")
                     ->get();
 
       return fractal()
@@ -35,39 +38,40 @@ class IndividualApiController extends Controller
         $individual->credit_id = $request->credit_id;
         $individual->reference_id = $request->reference_id;
         $individual->category_id = $request->category_id;
-        $individual->nombres = $request->nombres;
-        $individual->apellidos = $request->apellidos;
+        $individual->nombre_uno = $request->nombre_uno;
+        $individual->nombre_dos = $request->nombre_dos;
+        $individual->apellido_uno = $request->apellido_uno;
+        $individual->apellido_dos = $request->apellido_dos;
         $individual->apellido_casada = $request->apellido_casada;
         $individual->identificacion = $request->identificacion;
         $individual->fecha_nacimiento = $request->fecha_nacimiento;
+        $individual->genero = $request->genero;
+        $individual->telefono_contacto = $request->telefono_contacto;
         $individual->domicilio = $request->domicilio;
-        $individual->telefonos = $request->telefonos;
-        $individual->foto = 'http://lorempixel.com/640/480/?29931';
-        $individual->foto_dpi = 'http://lorempixel.com/640/480/?29931';
+        $individual->telefono_domicilio = $request->telefono_domicilio;
+        $individual->casa_propia = $request->casa_propia;
+        $individual->inicio_renta = $request->inicio_renta;
+        $individual->renta = $request->renta;
+        $individual->telefono_arrendante = $request->telefono_arrendante;
+        $individual->celular_arrendante = $request->celular_arrendante;
+        $individual->latitud = $request->latitud;
+        $individual->longitud = $request->longitud;
+        $individual->nit = $request->nit;
+        $individual->profesion = $request->profesion;
+        $individual->egresado = $request->egresado;
+        $individual->email = $request->email;
+        $individual->facebook = $request->facebook;
+        $individual->instagram = $request->instagram;
         $contract_id = $request->contract_id;
         $reference = $request->reference_id;
+        //dd($contract_id);
+        $contract = Contract::find($request->contract_id);
 
-        $contract = Contract::find($request->reference_id);
-
-        //dd($informacion);
         $contract->individuals()->save($individual);
 
         DB::table('contract_individual')
             ->where([['contract_id', $contract_id],['individual_id', $individual->id]])
             ->update(['reference_id' => $request->reference_id]);
-
-        $work = new Work;
-        $work->empresa = $request->empresa;
-        $work->direccion = $request->direccion;
-        $work->telefonos_empresa = $request->telefonos_empresa;
-        $work->puesto = $request->puesto;
-        $work->salario_mensual = $request->salario_mensual;
-        $work->tiempo_servicio = $request->tiempo_servicio;
-        $work->jefe_inmediato = $request->jefe_inmediato;
-
-
-        $individual->works()->save($work);
-
 
         return fractal()
             ->item($individual)

@@ -14,7 +14,7 @@ class Contract extends Model
 
  public function individuals(){
    return $this->belongsToMany(Individual::class)
-               ->withPivot('tipo_referencia');
+               ->withPivot('reference_id');
  }
 }
 

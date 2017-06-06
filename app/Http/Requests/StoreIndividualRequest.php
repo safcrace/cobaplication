@@ -27,11 +27,11 @@ class StoreIndividualRequest extends FormRequest
           'credit_id' => 'required',
           'reference_id' => 'required',
           'category_id' => 'required',
-          'nombres' => 'required',
-          'apellidos' => 'required',
+          'nombre_uno' => 'required',
+          'apellido_uno' => 'required',
           'identificacion' => 'required',
           'domicilio' => 'required',
-          'telefonos' => 'required',
+          'telefono_contacto' => 'required',
           'fecha_nacimiento' => 'required',
         ];
     }
