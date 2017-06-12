@@ -4,18 +4,18 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Transformers\CreditTransformer;
-use App\Credit;
+use App\bolsaValores;
 
 class CreditApiController extends Controller
 {
   public function index()
   {
-      $credits = Credit::all();
-      //dd($credits);
+      $bolsaValores = bolsaValores::all();
+      //dd($bolsaValores);
       //$creditsCollection = $credits->getCollection();
 
       return fractal()
-          ->collection($credits)
+          ->collection($bolsaValores)
           ->transformWith(new CreditTransformer)
           ->toArray();
   }

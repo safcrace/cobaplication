@@ -2,7 +2,7 @@
 
 namespace App\Transformers;
 
-use App\Contract;
+use App\Contrato;
 use Illuminate\Support\Facades\Response;
 
 class ContractTransformer extends \League\Fractal\TransformerAbstract
@@ -10,10 +10,10 @@ class ContractTransformer extends \League\Fractal\TransformerAbstract
 
     //protected $availableIncludes = ['individuals'];
 
-    public function transform(Contract $contract)
+    public function transform(Contrato $contrato)
     {
         return [
-            'id' =>  $contract->id,
+            'id' =>  $contrato->id,
         ];
     }
 

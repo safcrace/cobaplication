@@ -24,14 +24,14 @@ class StoreIndividualRequest extends FormRequest
     public function rules()
     {
         return [
-          'credit_id' => 'required',
+          /*'credit_id' => 'required',
           'reference_id' => 'required',
-          'category_id' => 'required',
+          'category_id' => 'required',*/
           'nombre_uno' => 'required',
           'apellido_uno' => 'required',
           'identificacion' => 'required',
-          'domicilio' => 'required',
-          'telefono_contacto' => 'required',
+          /*'domicilio' => 'required',
+          'telefono_contacto' => 'required',*/
           'fecha_nacimiento' => 'required',
         ];
     }

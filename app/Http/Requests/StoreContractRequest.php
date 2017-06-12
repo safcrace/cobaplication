@@ -24,9 +24,7 @@ class StoreContractRequest extends FormRequest
     public function rules()
     {
         return [
-            'credit_id' => 'required',
-            'interest_id' => 'required',
-            'payment_id' => 'required',
+            
             'monto_solicitado' => 'required',
             'tasa_interes' => 'required',
             'tasa_mora' => 'required',

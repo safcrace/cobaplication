@@ -2,25 +2,23 @@
 
 namespace App\Transformers;
 
-use App\Credit;
+use App\bolsaValores;
 
 class CreditTransformer extends \League\Fractal\TransformerAbstract
 {
-    public function transform(Credit $credit)
+    public function transform(bolsaValores $bolsa)
     {
         return [
-            'id' => $credit->id,
-            'descripcion' => $credit->descripcion,
-            'monto_minimo' => $credit->monto_minimo,
-            'monto_maximo' => $credit->monto_maximo,
-            'tasa_interes' => $credit->tasa_interes,
-            'cantidad_plazo_minimo' => $credit->cantidad_plazo_minimo,
-            'minimo_time_id' => $credit->minimo_time_id,
-            'cantidad_plazo_maximo' => $credit->cantidad_plazo_maximo,
-            'maximo_time_id' => $credit->maximo_time_id,
-            'porcentaje_mora' => $credit->porcentaje_mora,
-            'interest' => $credit->interest_id,
-            'payment_id' => $credit->payment_id,
+            'id' => $bolsa->id,
+            'tipo_credito_id' => $bolsa->tipo_creditos_id,            
+            'monto_minimo' => $bolsa->monto_minimo,
+            'monto_maximo' => $bolsa->monto_maximo,
+            'tasa_interes' => $bolsa->tasa_interes,
+            'plazo_minimo' => $bolsa->plazo_minimo,
+            'plazo_maximo' => $bolsa->plazo_maximo,
+            'porcentaje_mora' => $bolsa->porcentaje_mora,
+            'tipo_interes' => $bolsa->tipo_interes,
+            'tipo_cobro_id' => $bolsa->tipo_cobro_id,
         ];
     }
 }

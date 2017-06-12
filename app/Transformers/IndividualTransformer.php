@@ -3,23 +3,23 @@
 namespace App\Transformers;
 
 use Illuminate\Support\Facades\DB;
-use App\Contract;
-use App\Individual;
+use App\Contrato;
+use App\Persona;
 
 
 class IndividualTransformer extends \League\Fractal\TransformerAbstract
 {
-    public function transform(Individual $individual)
+    public function transform(Persona $persona)
     {
 
             return [
-                'id' => $individual->id,
-                'nombre_uno' => $individual->nombre_uno,
-                'nombre_dos' => $individual->nombre_dos,
-                'apellido_uno' => $individual->apellido_uno,
-                'apellido_dos' => $individual->apellido_dos,
-                'apellido_casada' => $individual->apellido_casada,
-                'identificacion' => $individual->identificacion,                
+                'id' => $persona->id,
+                'nombre_uno' => $persona->nombre_uno,
+                'nombre_dos' => $persona->nombre_dos,
+                'apellido_uno' => $persona->apellido_uno,
+                'apellido_dos' => $persona->apellido_dos,
+                'apellido_casada' => $persona->apellido_casada,
+                'identificacion' => $persona->identificacion,
         ];
 
     }

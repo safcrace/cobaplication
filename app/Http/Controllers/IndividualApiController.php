@@ -7,9 +7,9 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Requests\StoreIndividualRequest;
 use App\Transformers\IndividualTransformer;
 use App\Transformers\ContractTransformer;
-use App\Individual;
+use App\Persona;
 use App\Work;
-use App\Contract;
+use App\Contrato;
 
 
 class IndividualApiController extends Controller
@@ -34,25 +34,25 @@ class IndividualApiController extends Controller
 
     public function store(StoreIndividualRequest $request)
     {
-        $individual = new Individual;
-        $individual->credit_id = $request->credit_id;
-        $individual->reference_id = $request->reference_id;
-        $individual->category_id = $request->category_id;
-        $individual->nombre_uno = $request->nombre_uno;
-        $individual->nombre_dos = $request->nombre_dos;
-        $individual->apellido_uno = $request->apellido_uno;
-        $individual->apellido_dos = $request->apellido_dos;
-        $individual->apellido_casada = $request->apellido_casada;
-        $individual->identificacion = $request->identificacion;
-        $individual->fecha_nacimiento = $request->fecha_nacimiento;
-        $individual->genero = $request->genero;
-        $individual->telefono_contacto = $request->telefono_contacto;
-        $individual->domicilio = $request->domicilio;
-        $individual->telefono_domicilio = $request->telefono_domicilio;
-        $individual->casa_propia = $request->casa_propia;
-        $individual->inicio_renta = $request->inicio_renta;
-        $individual->renta = $request->renta;
-        $individual->telefono_arrendante = $request->telefono_arrendante;
+        $persona = new Persona;
+        $persona->contrato_id = $request->contrato_id;
+        $persona->tipo_referencia_id = $request->tipo_referencia_id;
+        $persona->categoria_persona_id = $request->categoria_persona_id;
+        $persona->nombre_uno = $request->nombre_uno;
+        $persona->nombre_dos = $request->nombre_dos;
+        $persona->apellido_uno = $request->apellido_uno;
+        $persona->apellido_dos = $request->apellido_dos;
+        $persona->apellido_casada = $request->apellido_casada;
+        $persona->identificacion = $request->identificacion;
+        $persona->fecha_nacimiento = $request->fecha_nacimiento;
+        $persona->genero = $request->genero;
+        $persona->telefono_contacto = $request->telefono_contacto;
+        /*$persona->domicilio = $request->domicilio;
+        $persona->telefono_domicilio = $request->telefono_domicilio;
+        $persona->casa_propia = $request->casa_propia;
+        $persona->inicio_renta = $request->inicio_renta;
+        $persona->renta = $request->renta;
+        $persona->telefono_arrendante = $request->telefono_arrendante;
         $individual->celular_arrendante = $request->celular_arrendante;
         $individual->latitud = $request->latitud;
         $individual->longitud = $request->longitud;
@@ -63,18 +63,18 @@ class IndividualApiController extends Controller
         $individual->facebook = $request->facebook;
         $individual->instagram = $request->instagram;
         $contract_id = $request->contract_id;
-        $reference = $request->reference_id;
-        //dd($contract_id);
-        $contract = Contract::find($request->contract_id);
+        $reference = $request->reference_id;*/
+        //dd($persona->contrato_id);
+        $contrato = Contrato::find($request->contrato_id);
 
-        $contract->individuals()->save($individual);
+        $contrato->personas()->save($persona);
 
-        DB::table('contract_individual')
-            ->where([['contract_id', $contract_id],['individual_id', $individual->id]])
-            ->update(['reference_id' => $request->reference_id]);
+        DB::table('contrato_persona')
+            ->where([['contrato_id', $persona->contrato_id],['persona_id', $persona->id]])
+            ->update(['tipo_referencia_id' => $request->tipo_referencia_id]);
 
         return fractal()
-            ->item($individual)
+            ->item($persona)
             ->transformWith(new IndividualTransformer)
             ->toArray();
     }
